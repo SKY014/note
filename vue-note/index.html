@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div id="app">
+    <h2>vue支持声明式渲染，采用的是简洁模板语法，并且是响应式的</h2>
+    <p>响应式:当数据发生变化的时候，页面会自动随之变化</p>
+
+    <h2>普通文本展示</h2>
+    <div>{{message}}</div>
+
+    <!-- 
+    vue指令 （directives） 
+    是带有v-前缀的特殊特性。 
+    指令特性的值预期是单个javascript表达式，
+    指令的职责是，当表达式的值改变时，将其产生的连带影响，
+    响应式的作用于DOM
+    -->
+    <h2>展示html:v-html指令</h2>
+    <p v-html="html"></p>
+    <p>{{html}}</p>
+    <p v-bind:class="color">属性绑定使用v-bind指令</p>
+
+
+
+  </div>
+
+  <script src="vue.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
