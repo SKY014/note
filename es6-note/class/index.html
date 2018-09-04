@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>class类</title>
+</head>
+<body>
+  
+  <script src="index.js"></script>
+  <script>
+  var point=new Point(1,2);
+  console.log(point);
+  // console.log(point.toSting);
+
+  /**
+   * Point 是构造函数或者类
+   * */ 
+  console.log(Point);
+
+  console.log(typeof Point,'class类的数据类型是function，类本身就指向构造函数');
+  // class类本身就指向构造函数
+  console.log(Point===Point.prototype.constructor);
+  </script>
+</body>
+</html>
