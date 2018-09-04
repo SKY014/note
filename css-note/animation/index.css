@@ -1,0 +1,46 @@
+/* transition 过渡 */
+
+#div{
+  width: 100px;
+  height: 100px;
+  background-color: teal;
+  transition: width 2s;
+}
+
+#div:hover{
+  width: 300px;
+}
+
+/* animation和transition不同点
+   animation可以通过keyframe显式控制当前帧的属性
+   而transition只能隐式的进行
+   所以相对而言animation的功能更加灵活
+   animation动画结束后属性不会发生变化
+   transition动画结束后属性发生变化
+
+
+*/
+
+
+/* animation 动画 
+   params1 自定义关键帧 
+   params2 动画时长
+  
+*/
+#div1{
+  width: 50px;
+  height: 50px;
+  background-color: brown;
+  animation: mymove 5s infinite;
+}
+
+@keyframes mymove{
+  0% { margin-top: 0px;}
+  /** 暂停效果 */
+  10% { margin-top: 0px;}
+  50% { margin-top: -100px;}
+  60% { margin-top: -100px;}
+  90% { margin-top: -200px;}
+  100% { margin-top: -200px;}
+}
+
