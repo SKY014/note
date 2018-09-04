@@ -15,6 +15,9 @@ var app = new Vue({
     message:'hello vue!',
     html:'<a href="http://www.baidu.com">百度</a>',
     color:'red',
+    isDisabled:true,
+    age:20,
+    name:'lucy'
     
   },
   /**
@@ -47,7 +50,9 @@ var app = new Vue({
    * 
    * */ 
   methods:{
-
+    btnClick(){
+      alert('按钮被点击了');
+    }
   },
 
   /**
@@ -55,7 +60,13 @@ var app = new Vue({
    * 存放计算属性
    * 
    * */ 
-  computed:{},
+  computed:{
+    reverseMessage(){
+      console.log('===reverseMessage===');
+      var value = this.message.split('').reverse().join('');
+      return value;
+    }
+  },
 
   /**
    * watch对象 监听属性变化，可以执行对应的回调函数

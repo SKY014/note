@@ -26,6 +26,29 @@
     <p v-html="html"></p>
     <p>{{html}}</p>
     <p v-bind:class="color">属性绑定使用v-bind指令</p>
+    <p :title="color">v-bind可以简写为:</p>
+    <button :disabled="isDisabled">添加</button>
+
+    <h2>数据绑定支持js表达式</h2>
+    <p>{{age+1}}</p>
+    <p>{{age>18?'成年':'未成年'}}</p>
+    <p>{{name.split('').reverse().join('')}}</p>
+    <p :id="color+'12'">属性绑定也支持js表达式</p>
+    <p>{{Date.now()}}</p>
+
+    <button v-on:click="btnClick">绑定事件，采用v-on指令，指令有一个参数，是事件名称</button>
+    <button v-on:click="btnClick">v-on可以简写为@</button>
+    <a href="http://www.baidu.com" @click.prevent="btnClick">指令可以添加修饰符，也就是后缀；例如.prevent可以阻止默认行为</a>
+
+    <h2>计算属性:html视图模板中不建议写复杂逻辑，当需要进行逻辑运算时，可以使用计算属性</h2>
+    <h3>什么时候会重新计算？当计算属性中使用的data属性发生变化的时候</h3>
+    <p>{{reverseMessage}}</p>
+
+    <h2>watch监听</h2>
+    <!-- <p>firstName:{{fir}}</p> -->
+
+
+
 
 
 
