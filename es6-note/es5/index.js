@@ -329,3 +329,171 @@
  * 
  * 
  * */  
+
+
+
+/**
+ * @name 浏览器模型
+ * 
+ * js是浏览器的内置脚本 也就是说 浏览器内置了js引擎 并且提供各种接口
+ * 
+ * 让js脚本可以控制浏览器的各种功能
+ * 
+ * script元素内部可以直接写js代码
+ * 
+ * type属性可以设为两种值 text/jajascript
+ *                      application/javascript
+ * 
+ * script标签页可以指定加载外部的脚本文件 
+ * 如果脚本文件使用了非英语字符 还应注明字符的编码
+ * 
+ * 网页元素的事件属性 可以写入js代码 可以写入js代码 
+ * 
+ * url协议 url支持js协议 即在url的位置写入代码 使用这个url的时候就会执行js代码
+ * 
+ * script元素
+ * 浏览器加载js脚本 主要通过script元素完成 
+ * 
+ * 浏览器一边下载html网页 一边开始解析
+ * 解析过程中 浏览器发现script元素 就暂停解析 把网页渲染的控制权交给js引擎
+ * 如果给script元素引用了外部脚本 就下载该脚本再执行 否则就直接执行代码
+ * 
+ * js引擎执行完毕 控制权交还渲染引擎 恢复往下解析html网页
+ * 
+ * 如果外部脚本加载时间很长 那么浏览器就会一直等待脚本下载完成 
+ * 造成网页长时间失去响应 浏览器就会呈现 假死 状态 这被称为阻塞效应
+ * 
+ * 为了解决脚本文件下载阻塞网页渲染的问题 对script元素加入defer属性 
+ * 
+ * 解决阻塞效应的另一个方法是对script元素加入async属性
+ * 
+ * 脚本的动态加载
+ * script元素可以动态生成 生成后再插入页面 从而实现脚本的动态加载
+ * 
+ * 浏览器的核心是两个部分 渲染引擎和js解释器 又称js引擎
+ * 
+ * firefox Gecko 引擎
+ * safari webkit引擎
+ * chrome blink 引擎
+ * ie trident 引擎
+ * edge edgeHTML引擎
+ * 
+ * js引擎 
+ * js引擎的主要作用 读取网页的js代码 对其处理后运行
+ * js是一种解释型语言 
+ * 
+ * 
+ * window对象
+ * 指当前的浏览器窗口
+ * 
+ * window.name属性是一个字符串 表示当前浏览器窗口的名字 
+ * 
+ * 只要浏览器窗口不关闭 这个属性是不会消失的 
+ * 
+ * window.closed window.opener
+ * 
+ * window.self window.window 属性都指向窗口本身 这两个属性只读
+ * 
+ * window.frameElement 
+ * 
+ * window.top  window.parent
+ * 
+ * window.status 属性用于读取浏览器状态栏的文本
+ *  
+ * window.screenX 和 window.screenY 返回浏览器窗口左上角相对于当前屏幕
+ * 左上角的水平距离和垂直距离 这两个属性只读
+ * 
+ * innerHeight innerWidth
+ * 
+ * 
+ * 
+ * @name window对象的方法
+ * window.alert() window.prompt() window.confirm() 都是浏览器于用户
+ * 互动的全局方法
+ * 
+ * window \n可以换行
+ * 
+ * 
+ * @name navigator对象的属性
+ * navigator.uerAgent
+ * 
+ * 识别浏览器不是一个好办法 因为必须考虑 所有的情况 非常麻烦 而且用户可以改变这个
+ * 字符串 
+ * 
+ * var ua=navigator.userAgent.toLowercase();
+ * 
+ * 
+ * if(/mobi/i.tset(ua)){
+ *   手机浏览器
+ * } else{
+ *   非手机浏览器
+ * }
+ * 
+ * navigator.plugins
+ * 返回 浏览器安装的插件
+ * 
+ * navigator.platform
+ * 返回用户的操作系统信息
+ * 
+ * 
+ * @name Cookie
+ * 
+ * Cookie是服务器保存在浏览器的一小段文本信息 
+ * 每个cookie的大小一般不能超过4k 
+ * 
+ * 常用场合有以下一些
+ * 
+ * 对话session 管理 保存登录 购物车 等需要的记录信息
+ * 个性化 保存用户的偏好 比如网页字体大小 背景色 
+ * 追踪 记录和分析用户行为
+ * 
+ * cookie容量很小 缺乏数据操作接口 客户端存储应该使用web storage API
+ * 和IndexedDB
+ * 
+ * cookie包含以下几个方面的信息
+ * Cookie 的名字
+ * Cookie 的值
+ * 到期时间 所属域名 生效的路径
+ * 
+ * 浏览器可以设置不接受 Cookie 也可以设置不向服务器发送Cookie
+ * 
+ * window.navigator.cookieEnabled 
+ * 
+ * Cookie 由 HTTP 协议生成 也主要供Http协议使用
+ * 
+ * HTTP请求 Cookie的发送
+ * 浏览器向服务器发送http请求时 每个请求都会带上相应的cookie 
+ * 也就是说 把服务器早前保存在浏览器的这段信息 再发回服务器
+ * 
+ * 
+ * Cookie的属性
+ * Expires属性指定一个具体的到期时间 到了指定时间以后 浏览器就不在保留这个COOKIE
+ * 
+ * 浏览器根据本地时间 决定cookie是否过期
+ * 
+ * domain path
+ * 
+ * 
+ * @name XHLHttpRequest对象
+ * 
+ * XHRHttpRequest 对象是ajax的主要接口 用于浏览器和服务器
+ * 之间的通信
+ * XMLHttpRequest 对象本身是一个构造函数 可以使用new命令生成实例
+ * 他没有任何参数
+ * 
+ * XHR 
+ * 
+ * 
+ * @name CORS
+ * 
+ * 
+ * 
+ * */ 
+
+
+// console.log(navigator.userAgent);
+
+// console.log(navigator.plugins);
+
+// console.log(navigator.platform)
+
