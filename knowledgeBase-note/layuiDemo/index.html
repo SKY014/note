@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>project</title>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="layui-header" p-com="header"></div>
+
+    <div class="table">
+      <table id="table"></table>
+    </div>
+
+    <div class="layer">弹出框</div>
+
+    <div class="layui-form">
+      <input type="radio" name="sex" value="0" id="">
+      <input type="radio" name="sex" value="1" id="">
+    </div>
+
+    <div>
+      <input type="text" placeholder="请输入名称" class="input-title">
+    </div>
+
+    <div class="upload">
+      <button id="upload-img">上传图片</button>
+    </div>
+
+
+  </div>
+
+  <script src="assets/libs/jquery-3.3.1.js"></script>
+  <script src="assets/libs/q.js"></script>
+  <script src="assets/libs/pandyle.min.js"></script>
+  <script src="assets/libs/layui/layui.js"></script>
+  <script>
+    layui.config({
+      base: 'module/'
+    }).use(['table', 'layer', 'form', 'upload', 'admin', 'element'], function () {
+      var table = layui.table;
+      var layer = layui.layer;
+      var form = layui.form;
+      var upload = layui.upload;
+      var admin = layui.admin;
+      var element = layui.element;
+      var data = [
+        { title: '小米', price: 3000 },
+        { title: '苹果', price: 6000 }
+      ];
+      var uploadImg = upload.render({
+        elem: 'upload-img',
+        url: '',
+        done: function () { }
+      })
+
+      renderTable(data);
+      // admin.console();
+
+      function renderTable(data) {
+        table.render({
+          elem: '#table',
+          data,
+          cols: [
+            [
+              {
+                type: 'checkbox',
+                width: '5%',
+                align: 'center'
+              },
+              {
+                title: '名称',
+                width: '8%',
+                field: 'title',
+                align: 'center'
+              },
+              {
+                title: '价格',
+                width: '8%',
+                field: 'price',
+                align: 'center'
+              }
+            ]
+          ]
+        })
+      }
+
+      $('.layer').click(function () {
+        layer.msg('弹出层')
+      })
+
+      $('.input-title').focus(function(){
+        console.log(this.value);
+      })
+
+      form.on('submit(submit)', function () {
+        console.log('提交');
+      })
+
+      
+
+
+
+    })
+  </script>
+</body>
+
+</html>
