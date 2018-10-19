@@ -172,10 +172,6 @@
  * webpack插件是一个具有apply属性的js对象
  * apply属性会被webpack compiler 调用 
  * 并且compiler对象可在整个编译生命周期访问
- * 
- * 
- * 
- * 
  * */ 
 
 /**
